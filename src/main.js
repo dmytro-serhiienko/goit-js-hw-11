@@ -41,6 +41,7 @@ formEl.addEventListener('submit', async event => {
 
     createGallery(data.hits);
   } catch (error) {
+    console.error('Error:', error);
     iziToast.error({
       message: 'Something went wrong. Please try again later.',
       position: 'topRight',

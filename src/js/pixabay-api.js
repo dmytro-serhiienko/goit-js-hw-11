@@ -12,7 +12,12 @@ export async function fetchImages(query) {
     safesearch: true,
   };
 
-  const response = await axios.get(BASE_URL, { params });
-
-  return response.data;
+  try {
+    const response = await axios.get(BASE_URL, { params });
+    console.log('API Response:', response.data);
+    return response.data;
+  } catch (error) {
+    console.error('API Error:', error);
+    throw error;
+  }
 }
